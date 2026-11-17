@@ -1,0 +1,37 @@
+# Python and local environment
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Raw/derived datasets and fitted pipelines remain local.
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/splits/*
+!data/splits/.gitkeep
+artifacts/*
+!artifacts/.gitkeep
+*.joblib
+*.pkl
+*.pickle
+
+# Local settings and credentials
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

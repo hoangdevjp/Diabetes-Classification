@@ -1,0 +1,31 @@
+# Convention from ML_DM_Implementation_Roadmap.md, section 5.
+project_name: diabetes-classification
+dataset:
+  source_url: https://archive.ics.uci.edu/dataset/891/cdc+diabetes+health+indicators
+  path: data/raw/diabetes.csv
+  version: TO_CONFIRM
+  sha256: TO_CONFIRM
+  target_column: Diabetes_binary
+  positive_label: 1
+  label_meaning: TO_CONFIRM
+  feature_columns: null  # M02/M03 must explicitly confirm valid predictors.
+split:
+  test_size: 0.2
+  stratify: true
+  random_state: 42
+cv:
+  strategy: StratifiedKFold
+  n_splits: 5
+  shuffle: true
+  random_state: 42
+training:
+  primary_metric: average_precision
+  metrics: [accuracy, precision, recall, f1, roc_auc, average_precision]
+  threshold_policy: default_baseline_then_validation_only
+  test_policy: final_evaluation_only
+paths:
+  processed: data/processed
+  splits: data/splits
+  metrics: results/metrics
+  figures: results/figures
+  artifacts: artifacts

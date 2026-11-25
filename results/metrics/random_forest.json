@@ -1,0 +1,44 @@
+{
+  "model_name": "random_forest",
+  "dataset_version": "uci891_binary_imbalanced",
+  "target_column": "Diabetes_binary",
+  "positive_label": 1,
+  "train_test_split": {
+    "test_size": 0.2,
+    "stratify": true,
+    "random_state": 42
+  },
+  "cv": {
+    "strategy": "StratifiedKFold",
+    "folds": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "selection_metric": "average_precision",
+  "baseline": {
+    "average_precision_mean": 0.36287316413700016
+  },
+  "best_params": {
+    "model__n_estimators": 300,
+    "model__max_depth": 16,
+    "model__min_samples_leaf": 20,
+    "model__max_features": "sqrt"
+  },
+  "validation_cv": {
+    "accuracy_mean": 0.8529842765721904,
+    "accuracy_std": 0.0008080729005425492,
+    "precision_mean": 0.6121779228130426,
+    "precision_std": 0.019911353626024187,
+    "recall_mean": 0.1065956318672258,
+    "recall_std": 0.0035003202589618254,
+    "f1_mean": 0.18150079193848118,
+    "f1_std": 0.00472652941425237,
+    "roc_auc_mean": 0.8125313660706975,
+    "roc_auc_std": 0.0010515059587523075,
+    "average_precision_mean": 0.43067394754671523,
+    "average_precision_std": 0.005555331994913346
+  },
+  "training_time_seconds": 32.993312268999944,
+  "pipeline_path": "artifacts/random_forest.joblib",
+  "score_method": "predict_proba"
+}
